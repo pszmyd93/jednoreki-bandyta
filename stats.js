@@ -2,18 +2,18 @@ class Stats {
     constructor() {
         this.games = [];
 
-        this.addGame = (bid = 1, result = true) => {
-            const newGame = [bid, result];
+        this.addGame = (game) => {
+            const newGame = game;
             this.games.push(newGame);
         }
 
         this.getWins = () => {
-            const winsNumber = this.games.filter(game => game[1] == true);
+            const winsNumber = this.games.filter(game => game[1] == true).length;
             console.log(winsNumber);
             return winsNumber;
         }
         this.getLoses = () => {
-            const losesNumber = this.games.filter(game => game[1] == false);
+            const losesNumber = this.games.filter(game => game[1] == false).length;
             console.log(losesNumber);
             return losesNumber;
         }
